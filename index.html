@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="COGNIFY — generate exam-ready practice worksheets for NIMCET, JEE Main, GATE, SSC, Banking, Railway and school classes 6-12, with a built-in AI study assistant." />
+<title>COGNIFY · Smart Worksheet Generator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='26' fill='%2371C9CE'/><text x='50' y='70' font-size='62' font-family='sans-serif' font-weight='bold' text-anchor='middle' fill='%23F9F5F6'>C</text></svg>" />
+</head>
+<body>
+
+<!-- ======================= DECOR ======================= -->
+<div class="aurora" aria-hidden="true">
+  <span class="blob b1"></span>
+  <span class="blob b2"></span>
+  <span class="blob b3"></span>
+  <span class="blob b4"></span>
+</div>
+<div class="scroll-progress"><span id="scrollBar"></span></div>
+
+<!-- ======================= NAV ======================= -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="brand" data-scroll>
+      <span class="brand-mark">
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="21" fill="none" stroke="currentColor" stroke-width="3"/>
+          <path d="M31 16.5a11 11 0 1 0 0 15" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="33" cy="24" r="3.4" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="brand-text">COGNIFY<em>worksheets, instantly</em></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="#home" data-scroll class="active">Home</a>
+      <a href="#features" data-scroll>Features</a>
+      <a href="#exams" data-scroll>Exams</a>
+      <a href="#generate" data-scroll>Generate</a>
+      <a href="#how" data-scroll>How it works</a>
+      <a href="#faq" data-scroll>FAQ</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="btn btn-ghost btn-sm" id="navTourBtn" type="button">Take the tour</button>
+      <a href="#generate" class="btn btn-primary btn-sm" data-scroll>Create worksheet</a>
+      <button class="hamburger" id="hamburger" type="button" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ======================= HERO ======================= -->
+<section class="section hero" id="home">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <span class="pill"><i class="dot"></i> Built for Indian competitive exams &amp; school boards</span>
+      <h1>Practice that is <span class="hl">generated</span>, not photocopied.</h1>
+      <p class="lead">
+        COGNIFY builds a fresh, exam-patterned worksheet every single time — pick your exam,
+        your class, your subject and how many questions you want. Answer key, solutions and a
+        print-ready PDF come with it. And if you get stuck, the study bot is right there in the corner.
+      </p>
+      <div class="hero-cta">
+        <a href="#generate" class="btn btn-primary btn-lg" data-scroll>
+          Generate a worksheet
+          <svg viewBox="0 0 24 24" class="ico"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <button class="btn btn-secondary btn-lg" id="heroTourBtn" type="button">
+          <svg viewBox="0 0 24 24" class="ico"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
+          See the features
+        </button>
+      </div>
+
+      <ul class="hero-stats">
+        <li><strong data-count="85" data-suffix="+">85+</strong><span>topic engines</span></li>
+        <li><strong data-count="11">11</strong><span>exam patterns</span></li>
+        <li><strong>∞</strong><span>unique sheets</span></li>
+        <li><strong data-count="100" data-suffix="%">100%</strong><span>offline-ready</span></li>
+      </ul>
+    </div>
+
+    <div class="hero-visual reveal" data-delay="120">
+      <div class="paper-stack">
+        <div class="paper p3"></div>
+        <div class="paper p2"></div>
+        <div class="paper p1">
+          <div class="paper-head">
+            <div>
+              <h4>COGNIFY Worksheet</h4>
+              <small>JEE Main · Physics · Set A</small>
+            </div>
+            <span class="paper-badge">20 Q · 60 min</span>
+          </div>
+          <div class="paper-line q"><b>1.</b> A body starts from rest with acceleration 4 m/s². Distance covered in 5 s is…</div>
+          <div class="paper-opts"><span>(a) 40 m</span><span class="right">(b) 50 m</span><span>(c) 20 m</span><span>(d) 100 m</span></div>
+          <div class="paper-line q"><b>2.</b> The de-Broglie wavelength of an electron accelerated through 100 V is…</div>
+          <div class="paper-opts"><span>(a) 1.23 Å</span><span>(b) 12.3 Å</span><span>(c) 0.12 Å</span><span>(d) 3.21 Å</span></div>
+          <div class="paper-line q"><b>3.</b> Work done by a force F = 6î − 2ĵ N over displacement…</div>
+          <div class="paper-skeleton"><i></i><i></i><i></i></div>
+        </div>
+        <div class="float-chip chip-a">Answer key included</div>
+        <div class="float-chip chip-b">Download as PDF</div>
+        <div class="float-chip chip-c">Fresh numbers every time</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>NIMCET</span><i>◆</i><span>JEE MAIN</span><i>◆</i><span>GATE</span><i>◆</i><span>SSC CGL</span><i>◆</i><span>IBPS PO</span><i>◆</i><span>RRB NTPC</span><i>◆</i><span>CAT</span><i>◆</i><span>NDA</span><i>◆</i><span>CUET</span><i>◆</i><span>CLASS 6–12</span><i>◆</i>
+      <span>NIMCET</span><i>◆</i><span>JEE MAIN</span><i>◆</i><span>GATE</span><i>◆</i><span>SSC CGL</span><i>◆</i><span>IBPS PO</span><i>◆</i><span>RRB NTPC</span><i>◆</i><span>CAT</span><i>◆</i><span>NDA</span><i>◆</i><span>CUET</span><i>◆</i><span>CLASS 6–12</span><i>◆</i>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FEATURES ======================= -->
+<section class="section tint-pink" id="features">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What's inside</span>
+      <h2>Everything you need between <em>“I should study”</em> and <em>“I practised today.”</em></h2>
+      <p>Tap any card to open the full walkthrough.</p>
+    </div>
+
+    <div class="feature-grid" id="featureGrid">
+      <!-- cards injected by app.js, with a no-JS fallback below -->
+      <noscript><p>Please enable JavaScript to use COGNIFY.</p></noscript>
+    </div>
+
+    <div class="sec-foot reveal">
+      <button class="btn btn-primary" id="featuresTourBtn" type="button">Open the feature tour</button>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= EXAMS ======================= -->
+<section class="section" id="exams">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Exam library</span>
+      <h2>Patterns that match the real paper.</h2>
+      <p>Each exam carries its own subject list, marking scheme and difficulty ceiling. Pick one to load it into the builder.</p>
+    </div>
+    <div class="exam-grid" id="examGrid"></div>
+  </div>
+</section>
+
+<!-- ======================= GENERATE ======================= -->
+<section class="section tint-aqua" id="generate">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The builder</span>
+      <h2>Build your worksheet.</h2>
+      <p>Prefer talking? Use the bot in the bottom-right corner — it asks the same questions and fills this form for you.</p>
+    </div>
+
+    <div class="builder reveal">
+      <form class="builder-form" id="builderForm" autocomplete="off">
+        <div class="field">
+          <label for="fExam">Exam / Track</label>
+          <select id="fExam" name="exam"></select>
+          <small class="hint" id="examHint"></small>
+        </div>
+
+        <div class="field">
+          <label for="fLevel">Class / Level</label>
+          <select id="fLevel" name="level"></select>
+        </div>
+
+        <div class="field">
+          <label for="fSubject">Subject</label>
+          <select id="fSubject" name="subject"></select>
+        </div>
+
+        <div class="field">
+          <label for="fCount">Number of questions <b id="countOut">20</b></label>
+          <input type="range" id="fCount" name="count" min="5" max="50" step="5" value="20" />
+          <div class="range-scale"><span>5</span><span>20</span><span>35</span><span>50</span></div>
+        </div>
+
+        <div class="field">
+          <label>Difficulty</label>
+          <div class="seg" id="fDifficulty" role="radiogroup" aria-label="Difficulty">
+            <button type="button" data-val="easy" role="radio" aria-checked="false">Easy</button>
+            <button type="button" data-val="moderate" role="radio" aria-checked="false">Moderate</button>
+            <button type="button" data-val="advanced" role="radio" aria-checked="false">Advanced</button>
+            <button type="button" data-val="mixed" class="on" role="radio" aria-checked="true">Mixed</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="fTime">Time limit (minutes)</label>
+          <input type="number" id="fTime" name="time" min="5" max="240" value="30" />
+        </div>
+
+        <div class="field field-wide">
+          <label for="fTitle">Worksheet title</label>
+          <input type="text" id="fTitle" name="title" placeholder="Auto-generated from your selection" />
+        </div>
+
+        <div class="field field-wide">
+          <label>Topics <small class="hint">(leave all unticked to mix the whole subject)</small></label>
+          <div class="chips" id="topicChips"></div>
+        </div>
+
+        <div class="field field-wide toggles">
+          <label class="switch"><input type="checkbox" id="fKey" checked /><span></span>Include answer key</label>
+          <label class="switch"><input type="checkbox" id="fSolutions" checked /><span></span>Include solutions</label>
+          <label class="switch"><input type="checkbox" id="fNegative" /><span></span>Show negative marking</label>
+          <label class="switch"><input type="checkbox" id="fShuffle" checked /><span></span>Shuffle options</label>
+        </div>
+
+        <div class="builder-actions field-wide">
+          <button class="btn btn-primary btn-lg" type="submit" id="generateBtn">
+            <svg viewBox="0 0 24 24" class="ico"><path d="M12 3v18M3 12h18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+            Generate worksheet
+          </button>
+          <button class="btn btn-secondary btn-lg" type="button" id="regenBtn" disabled>
+            <svg viewBox="0 0 24 24" class="ico"><path d="M20 11a8 8 0 1 0-1.6 5.4M20 5v6h-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            New set, same settings
+          </button>
+          <button class="btn btn-ghost btn-lg" type="reset" id="resetBtn">Reset</button>
+        </div>
+      </form>
+
+      <aside class="builder-side">
+        <div class="side-card">
+          <h4>Paper preview</h4>
+          <ul class="kv" id="previewKV"></ul>
+        </div>
+        <div class="side-card tip">
+          <h4>Study tip</h4>
+          <p id="studyTip">Pick 20 questions, set 30 minutes, and attempt it without touching the answer key. Reviewing a timed sheet beats re-reading notes.</p>
+          <button class="btn btn-ghost btn-sm" id="newTipBtn" type="button">Another tip</button>
+        </div>
+      </aside>
+    </div>
+
+    <!-- OUTPUT -->
+    <div class="output" id="output" hidden>
+      <div class="output-bar">
+        <div class="output-meta">
+          <strong id="outTitle">Worksheet</strong>
+          <span id="outSub"></span>
+        </div>
+        <div class="output-tools">
+          <button class="btn btn-ghost btn-sm" id="toggleKeyBtn" type="button">Hide answer key</button>
+          <button class="btn btn-secondary btn-sm" id="printBtn" type="button">
+            <svg viewBox="0 0 24 24" class="ico"><path d="M7 9V3h10v6M7 19H5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M7 15h10v6H7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            Download PDF
+          </button>
+          <div class="dropdown">
+            <button class="btn btn-primary btn-sm" id="dlBtn" type="button" aria-haspopup="true" aria-expanded="false">
+              Download ▾
+            </button>
+            <div class="dropdown-menu" id="dlMenu">
+              <button type="button" data-dl="pdf">PDF / Print</button>
+              <button type="button" data-dl="html">Web page (.html)</button>
+              <button type="button" data-dl="txt">Plain text (.txt)</button>
+              <button type="button" data-dl="csv">Spreadsheet (.csv)</button>
+              <button type="button" data-dl="key">Answer key only</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="paper-wrap">
+        <article class="worksheet" id="worksheetPaper"></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= HOW IT WORKS ======================= -->
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">How it works</span>
+      <h2>Four steps. Under ten seconds.</h2>
+    </div>
+    <ol class="steps">
+      <li class="reveal"><span class="step-n">01</span><h4>Choose the exam</h4><p>NIMCET, JEE Main, GATE, SSC, Banking, Railway, CAT, NDA, CUET or a school class from 6 to 12.</p></li>
+      <li class="reveal" data-delay="80"><span class="step-n">02</span><h4>Set the shape</h4><p>Subject, topics, question count, difficulty and time limit. The marking scheme follows the real pattern.</p></li>
+      <li class="reveal" data-delay="160"><span class="step-n">03</span><h4>Generate</h4><p>Questions are composed on the spot with fresh numbers, so the same settings never give you the same paper twice.</p></li>
+      <li class="reveal" data-delay="240"><span class="step-n">04</span><h4>Practise &amp; download</h4><p>Attempt it on screen or take the PDF, HTML, TXT or CSV with you. Answer key and solutions optional.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= AI STRIP ======================= -->
+<section class="section tint-pink ai-strip" id="assistant">
+  <div class="wrap ai-grid">
+    <div class="reveal">
+      <span class="eyebrow">Cognify AI</span>
+      <h2>A study bot that actually knows the syllabus.</h2>
+      <p class="lead">
+        Ask it what NIMCET weights the most, how to budget 60 minutes across SSC sections, what to revise
+        the night before GATE, or simply “give me 15 moderate questions on permutations”. It can build the
+        worksheet for you mid-conversation.
+      </p>
+      <ul class="tick-list">
+        <li>Guided worksheet flow — exam, class, subject, count, done.</li>
+        <li>Syllabus, pattern, cut-off and strategy answers for every listed exam.</li>
+        <li>Works offline out of the box; plug in an API key for a full LLM.</li>
+      </ul>
+      <button class="btn btn-primary btn-lg" id="openChatBtn" type="button">Talk to the bot</button>
+    </div>
+    <div class="reveal" data-delay="120">
+      <div class="chat-preview">
+        <div class="cp-row bot"><span>Hi! Which exam are you prepping for?</span></div>
+        <div class="cp-row me"><span>NIMCET</span></div>
+        <div class="cp-row bot"><span>Nice. Mathematics, Logical Reasoning, Computer Awareness or English?</span></div>
+        <div class="cp-row me"><span>Logical Reasoning, 20 questions</span></div>
+        <div class="cp-row bot"><span>Generating a 20-question NIMCET reasoning set now…</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FAQ ======================= -->
+<section class="section" id="faq">
+  <div class="wrap narrow">
+    <div class="sec-head reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>Questions about the questions.</h2>
+    </div>
+    <div class="accordion" id="accordion"></div>
+  </div>
+</section>
+
+</main>
+
+<!-- ======================= FOOTER ======================= -->
+<footer class="footer" id="contact">
+  <div class="wrap footer-grid">
+    <div>
+      <a href="#home" class="brand footer-brand" data-scroll>
+        <span class="brand-mark">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <circle cx="24" cy="24" r="21" fill="none" stroke="currentColor" stroke-width="3"/>
+            <path d="M31 16.5a11 11 0 1 0 0 15" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="33" cy="24" r="3.4" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="brand-text">COGNIFY</span>
+      </a>
+      <p class="muted">Worksheets that rebuild themselves. Made for students who'd rather practise than hunt for PDFs.</p>
+    </div>
+    <div>
+      <h5>Navigate</h5>
+      <a href="#home" data-scroll>Home</a>
+      <a href="#features" data-scroll>Features</a>
+      <a href="#exams" data-scroll>Exams</a>
+      <a href="#generate" data-scroll>Generate</a>
+      <a href="#faq" data-scroll>FAQ</a>
+    </div>
+    <div>
+      <h5>Exams</h5>
+      <a href="#exams" data-scroll>NIMCET</a>
+      <a href="#exams" data-scroll>JEE Main</a>
+      <a href="#exams" data-scroll>GATE</a>
+      <a href="#exams" data-scroll>SSC &amp; Banking</a>
+      <a href="#exams" data-scroll>Railway</a>
+    </div>
+    <div>
+      <h5>Assistant</h5>
+      <a href="#assistant" data-scroll>Cognify AI</a>
+      <button class="linkish" id="footerChatBtn" type="button">Open chat</button>
+      <button class="linkish" id="footerTourBtn" type="button">Feature tour</button>
+      <button class="linkish" id="aiKeyBtn" type="button">Connect an AI key</button>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© <span id="year"></span> COGNIFY. Practice generated, not photocopied.</span>
+    <span class="muted">Questions are procedurally composed for practice; always cross-check with your official syllabus.</span>
+  </div>
+</footer>
+
+<!-- ======================= FEATURE OVERLAY SLIDER ======================= -->
+<div class="overlay" id="overlay" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Feature tour">
+  <div class="overlay-backdrop" data-close></div>
+  <div class="overlay-panel">
+    <button class="overlay-close" id="overlayClose" type="button" aria-label="Close tour">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+    </button>
+    <div class="overlay-track" id="overlayTrack"></div>
+    <button class="overlay-nav prev" id="overlayPrev" type="button" aria-label="Previous">
+      <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="overlay-nav next" id="overlayNext" type="button" aria-label="Next">
+      <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="overlay-foot">
+      <div class="overlay-dots" id="overlayDots"></div>
+      <div class="overlay-bar"><span id="overlayProgress"></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================= CHAT WIDGET ======================= -->
+<div class="chat-launcher" id="chatLauncher" role="button" tabindex="0" aria-label="Open Cognify assistant">
+  <span class="ring"></span>
+  <span class="bubble">
+    <svg viewBox="0 0 24 24" class="ic-chat"><path d="M21 12a8 8 0 0 1-8 8H7l-4 3 1.2-4.2A8 8 0 1 1 21 12z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><circle cx="9" cy="12" r="1.2" fill="currentColor"/><circle cx="13" cy="12" r="1.2" fill="currentColor"/><circle cx="17" cy="12" r="1.2" fill="currentColor"/></svg>
+    <svg viewBox="0 0 24 24" class="ic-close"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+  </span>
+  <span class="nudge" id="chatNudge">Need a worksheet? Tap me →</span>
+</div>
+
+<section class="chat-window" id="chatWindow" hidden aria-label="Cognify assistant">
+  <header class="chat-head">
+    <div class="chat-avatar">
+      <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" fill="none" stroke="currentColor" stroke-width="3"/><path d="M31 16.5a11 11 0 1 0 0 15" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="33" cy="24" r="3.4" fill="currentColor"/></svg>
+    </div>
+    <div class="chat-id">
+      <strong>Cognify Assistant</strong>
+      <span id="chatStatus">Online · offline-smart mode</span>
+    </div>
+    <div class="chat-head-actions">
+      <button type="button" id="chatSettings" aria-label="Assistant settings">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.8v2.4M12 18.8v2.4M21.2 12h-2.4M5.2 12H2.8M18.5 5.5l-1.7 1.7M7.2 16.8l-1.7 1.7M18.5 18.5l-1.7-1.7M7.2 7.2L5.5 5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <button type="button" id="chatReset" aria-label="Restart conversation">
+        <svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-1.6 5.4M20 5v6h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button type="button" id="chatClose" aria-label="Close chat">
+        <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="chat-tabs" role="tablist">
+    <button type="button" class="on" data-mode="worksheet" role="tab" aria-selected="true">Worksheet bot</button>
+    <button type="button" data-mode="ask" role="tab" aria-selected="false">Ask anything</button>
+  </div>
+
+  <div class="chat-settings" id="chatSettingsPanel" hidden>
+    <h5>Connect a real AI model (optional)</h5>
+    <p>Paste an Anthropic API key to upgrade <em>Ask anything</em> from the built-in offline brain to a full Claude model. The key is kept in this browser only and is never sent anywhere except to the model provider.</p>
+    <div class="cs-row">
+      <input type="password" id="aiKeyInput" placeholder="sk-ant-..." />
+      <button class="btn btn-primary btn-sm" id="aiKeySave" type="button">Save</button>
+    </div>
+    <div class="cs-row">
+      <select id="aiModel">
+        <option value="claude-sonnet-5">Claude Sonnet 5 — balanced</option>
+        <option value="claude-opus-5">Claude Opus 5 — deepest</option>
+        <option value="claude-haiku-4-5-20251001">Claude Haiku 4.5 — fastest</option>
+      </select>
+      <button class="btn btn-ghost btn-sm" id="aiKeyClear" type="button">Remove key</button>
+    </div>
+    <small id="aiKeyNote" class="hint">No key saved — running the built-in assistant.</small>
+  </div>
+
+  <div class="chat-body" id="chatBody"></div>
+
+  <div class="chat-quick" id="chatQuick"></div>
+
+  <form class="chat-input" id="chatForm">
+    <input type="text" id="chatInput" placeholder="Type a message…" autocomplete="off" />
+    <button type="submit" aria-label="Send">
+      <svg viewBox="0 0 24 24"><path d="M20 12L4 4l5 8-5 8z" fill="currentColor"/></svg>
+    </button>
+  </form>
+</section>
+
+<div class="toast" id="toast" hidden></div>
+
+<!-- ======================= SCRIPTS ======================= -->
+<script src="assets/js/exams.js"></script>
+<script src="assets/js/bank.js"></script>
+<script src="assets/js/generators.js"></script>
+<script src="assets/js/engine.js"></script>
+<script src="assets/js/render.js"></script>
+<script src="assets/js/chat.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
