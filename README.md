@@ -94,11 +94,29 @@ assets/js/render.js        worksheet HTML + TXT/CSV/HTML exports and downloads
 assets/js/chat.js          chat widget, guided flow, offline brain, optional Claude API
 assets/js/app.js           page wiring: nav, reveals, overlay slider, builder, exports
 ```
+## 🚀 Getting Started
 
-## Notes
+1. Clone or download this repository.
+2. Open the project folder.
+3. Open `index.html` in your web browser.
 
-- Nothing is uploaded; there is no account, backend or analytics. Builder preferences and the
-  optional API key are stored in your browser only.
-- Questions are generated for practice. Cross-check against your official syllabus before relying
-  on a sheet for final revision.
-- Responsive down to phone width; respects `prefers-reduced-motion`.
+## 🎓 Target Audience
+
+- Competitive examination aspirants.
+- School and college students.
+- Students looking for structured practice materials.
+
+
+## 🔮 Future Enhancements
+
+- Additional examination categories.
+- More subject-wise worksheets.
+- Downloadable worksheet formats.
+- Performance tracking and progress monitoring.
+
+
+## Developer
+Developed as an educational web application.
+  
+---
+**Cognify — Learn. Practice. Excel.**
