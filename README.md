@@ -13,6 +13,10 @@ It works fully offline. If you'd rather serve it, any static server will do:
 python -m http.server 8000     # then open http://localhost:8000
 ```
 
+##Live Demo
+Visit Cognify: [Open Website](https://aditi-kumari-03.github.io/cognify/)
+
+
 ## What's in it
 
 | Section | What it does |
