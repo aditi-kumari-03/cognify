@@ -17,6 +17,20 @@ python -m http.server 8000     # then open http://localhost:8000
 Visit Cognify: [Open Website](https://aditi-kumari-03.github.io/cognify/)
 
 
+## 📸 Screenshots
+
+### Homepage
+![Cognify Homepage](screenshots/homepage.png)
+
+### Exam Selection
+![Exam Selection](screenshots/exam-selection.png)
+
+### Worksheet Generation
+![Worksheet Generation](screenshots/worksheet-generation.png)
+
+### Generated Worksheet
+![Generated Worksheet](screenshots/generated-worksheet.png)
+
 ## What's in it
 
 | Section | What it does |
