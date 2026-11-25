@@ -28,8 +28,7 @@ Visit Cognify: [Open Website](https://aditi-kumari-03.github.io/cognify/)
 ### Worksheet Generation
 ![Worksheet Generation](screenshots/worksheet-generation.png)
 
-### Generated Worksheet
-![Generated Worksheet](screenshots/generated-worksheet.png)
+
 
 ## What's in it
 
